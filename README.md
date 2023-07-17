@@ -4,4 +4,4 @@ python 알고리즘 스터디
 # 목표
 대기업 입사
 
-![Jiyeon's GitHub Stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true&theme=radical)
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=dqk8632@naver.com)](https://solved.ac/dqk8632@naver.com/)
