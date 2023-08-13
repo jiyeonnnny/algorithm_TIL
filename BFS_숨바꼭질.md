@@ -1,0 +1,37 @@
+```py
+import sys
+input = sys.stdin.readline
+
+def dfs(x, depth):
+    global k, n
+
+    if depth == abs(n-k):
+        return
+    if x == k:
+        return
+
+    for dx in [x*2, x-1, x+1]:
+        nx = x + dx
+        if 0<=nx<=100000:
+            if dp[nx]==0:
+                dp[nx] = depth+1 # depth? depth+1
+                dfs(nx, depth+1)
+
+
+n, k = map(int, input().split())
+dp = [0]*100000
+dfs(n,0)
+print(dp[k])
+# print(dp)
+```
+
+- DFS로 풀려고 했음
+- depth 설정해주면 될 것 같아서
+- 하지만 DFS로 풀 수 없는 문제임
+- 예시) 1 3
+- 1 에서 2배한 값들 먼저 순회. 1 - 2 - 4
+- 이미 2와 4에서 이미 dp값을 저장되어 있기 때문에, if dp[nx]==0; dp[nx] = depth+1 이 안된다고 함.
+- 그래도 의문? 가능하지 않나...?
+
+
+- 암튼 BFS로 시도 중
