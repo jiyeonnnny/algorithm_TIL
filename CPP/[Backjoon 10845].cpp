@@ -1,32 +1,44 @@
-import sys
-input = sys.stdin.readline
-from collections import deque
+#include<iostream>
+#include<queue>
+#include<string>
+using namespace std;
 
-q = deque([])
-for _ in range(int(input())):
-    commands = input().split()
-    if commands[0] == 'push':
-        q.append(commands[1])
-    elif commands[0] == 'pop':
-        if q:
-            print(q.popleft())
-        else:
-            print(-1)
-            
-    elif commands[0]=='size':
-        print(len(q))
-    elif commands[0]=='empty':
-        if q:
-            print(0)
-        else:
-            print(1)
-    elif commands[0]=='front':
-        if q:
-            print(q[0])
-        else:
-            print(-1)
-    else:
-        if q:
-            print(q[-1])
-        else:
-            print(-1)
+int main(void) {
+
+	int T, value;
+	queue<int> Q;
+	string command;
+	cin >> T;
+
+	for (int i = 0; i < T; i++) {
+		cin >> command;
+
+		if (command == "push") {
+			cin >> value;
+			Q.push(value);
+		}
+		else if (command == "pop") {
+			if (Q.empty()) cout << -1 << endl;
+			else {
+				cout << Q.front() << endl;
+				Q.pop();
+			}
+		}
+		else if (command == "size") {
+			cout << Q.size() << endl;
+		}
+		else if (command == "empty") {
+			cout << Q.empty() << endl;
+		}
+		else if (command == "front") {
+			if (Q.empty()) cout << -1 << endl;
+			else cout << Q.front() << endl;
+		}
+		else {
+			if (Q.empty()) cout << -1 << endl;
+			else cout << Q.back() << endl;
+		}
+	}
+
+	return 0;
+}
